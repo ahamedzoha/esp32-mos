@@ -1,1 +1,4 @@
+#google credentials
 *.pem
+.key.pem
+.pub.pem
