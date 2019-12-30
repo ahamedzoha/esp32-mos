@@ -1,0 +1,1339 @@
+- - sys.esp32_adc_vref
+  - i
+  - 0
+  - title: ADC Vref, in mV
+- - sys.esp32_adc_width
+  - i
+  - 3
+  - title: ADC width, see ESP32 IDF
+- - i2c
+  - o
+  - title: I2C settings
+- - i2c.unit_no
+  - i
+  - 0
+  - title: Which hardware unit to use, 0 or 1
+- - i2c.enable
+  - b
+  - false
+  - title: Enable I2C
+- - i2c.freq
+  - i
+  - 100000
+  - title: Clock frequency
+- - i2c.debug
+  - b
+  - false
+  - title: Debug I2C bus activity
+- - i2c.sda_gpio
+  - i
+  - 32
+  - title: GPIO to use for SDA
+- - i2c.scl_gpio
+  - i
+  - 33
+  - title: GPIO to use for SCL
+- - i2c1
+  - i2c
+  - title: I2C settings
+- - i2c1.unit_no
+  - 1
+- - i2c1.enable
+  - false
+- - i2c1.sda_gpio
+  - 22
+- - i2c1.scl_gpio
+  - 23
+- - sys.atca
+  - o
+  - title: CryptoAuthLib configuration
+- - sys.atca.enable
+  - b
+  - false
+  - title: Enable the chip
+- - sys.atca.i2c_bus
+  - i
+  - 0
+  - title: Which I2C bus to use
+- - sys.atca.i2c_addr
+  - i
+  - 96
+  - title: I2C address of the chip
+- - sys.atca.ecdh_slots_mask
+  - i
+  - 12
+  - title: Which slots can be used for ECDH (bitmask)
+- - debug.mbedtls_level
+  - i
+  - 1
+  - title: mbedTLS debug level
+- - device
+  - o
+  - title: Device settings
+- - device.id
+  - s
+  - title: Device ID
+- - device.license
+  - s
+  - title: License code
+- - device.mac
+  - s
+  - ""
+  - title: user/custom defined mac address
+- - debug
+  - o
+  - title: Debug Settings
+- - debug.level
+  - i
+  - 2
+  - title: Debug Level
+- - debug.file_level
+  - s
+  - ""
+  - title: 'Log file level specification: file=level,file=level,...; see cs_log_set_file_level()'
+- - debug.stdout_uart
+  - i
+  - 0
+  - title: STDOUT UART (-1 to disable)
+- - debug.stderr_uart
+  - i
+  - 0
+  - title: STDERR UART (-1 to disable)
+- - debug.factory_reset_gpio
+  - i
+  - -1
+  - title: Factory reset GPIO (low on boot)
+- - debug.mg_mgr_hexdump_file
+  - s
+  - title: File name to hexdump network traffic to. Use '-' for stdout, '--' for stderr.
+- - sys
+  - o
+  - title: System settings
+- - sys.tz_spec
+  - s
+  - ""
+  - title: 'See formats for the TZ env var: "man tzset". Formats like ":/path/to/file"
+      are not supported'
+- - sys.wdt_timeout
+  - i
+  - 30
+  - title: Watchdog timeout (seconds)
+- - sys.pref_ota_lib
+  - s
+  - title: Preferred ota lib, e.g. dash, ota-http-client
+- - conf_acl
+  - s
+  - '*'
+  - title: Conf ACL
+- - mqtt
+  - o
+  - title: MQTT settings
+- - mqtt.enable
+  - b
+  - false
+  - title: Enable MQTT
+- - mqtt.server
+  - s
+  - iot.eclipse.org:1883
+  - title: MQTT server
+- - mqtt.client_id
+  - s
+  - ""
+  - title: ClientID t send to the broker. Defaults to device.id.
+- - mqtt.user
+  - s
+  - ""
+  - title: User name
+- - mqtt.pass
+  - s
+  - ""
+  - title: Password
+- - mqtt.reconnect_timeout_min
+  - d
+  - 2
+  - title: Starting reconnect timeout
+- - mqtt.reconnect_timeout_max
+  - d
+  - 60
+  - title: Maximum reconnect timeout
+- - mqtt.ssl_cert
+  - s
+  - ""
+  - title: Client certificate to present to the server
+- - mqtt.ssl_key
+  - s
+  - ""
+  - title: Private key corresponding to the certificate
+- - mqtt.ssl_ca_cert
+  - s
+  - ""
+  - title: Verify server certificate using this CA bundle
+- - mqtt.ssl_cipher_suites
+  - s
+  - ""
+  - title: Cipher suites to offer to the server
+- - mqtt.ssl_psk_identity
+  - s
+  - ""
+  - title: PSK identity (must specify PSK cipher suites)
+- - mqtt.ssl_psk_key
+  - s
+  - ""
+  - title: PSK key
+- - mqtt.clean_session
+  - b
+  - true
+  - title: Clean Session
+- - mqtt.keep_alive
+  - i
+  - 60
+  - title: Keep alive interval
+- - mqtt.will_topic
+  - s
+  - ""
+  - title: Will topic
+- - mqtt.will_message
+  - s
+  - ""
+  - title: Will message
+- - mqtt.max_qos
+  - i
+  - 2
+  - title: Limit QoS of outgoing messages to at most this
+- - mqtt.recv_mbuf_limit
+  - i
+  - 3072
+  - title: Limit recv buffer size
+- - mqtt.require_time
+  - b
+  - false
+  - title: Only connect if (when) wall time is set
+- - mqtt.cloud_events
+  - b
+  - true
+  - title: Trigger cloud events when connected / disconnected
+- - mqtt1
+  - mqtt
+  - title: Backup MQTT settings
+- - debug.stdout_topic
+  - s
+  - ""
+  - title: MQTT topic to publish STDOUT to
+- - debug.stderr_topic
+  - s
+  - ""
+  - title: MQTT topic to publish STDERR to
+- - shadow
+  - o
+  - title: Device shadow settings
+- - shadow.enable
+  - b
+  - true
+  - title: Enable device shadow functionality
+- - shadow.lib
+  - s
+  - ""
+  - title: Preferred shadow lib, e.g. aws, dash, gcp
+- - aws
+  - o
+  - title: AWS settings
+- - aws.thing_name
+  - s
+  - ""
+  - title: Set thing name. If not specified, device.id is used
+- - aws.greengrass
+  - o
+  - title: AWS Greengrass settings
+- - aws.greengrass.enable
+  - b
+  - false
+  - title: Enable AWS Greengrass service
+- - aws.greengrass.reconnect_timeout_min
+  - i
+  - 2
+  - title: Starting reconnect timeout
+- - aws.greengrass.reconnect_timeout_max
+  - i
+  - 60
+  - title: Maximum reconnect timeout
+- - mqtt.recv_mbuf_limit
+  - 8192
+- - sntp
+  - o
+  - title: SNTP settings
+- - sntp.enable
+  - b
+  - true
+  - title: Enable SNTP
+- - sntp.server
+  - s
+  - time.google.com
+  - title: Server address
+- - sntp.retry_min
+  - i
+  - 1
+  - title: Minimum retry interval
+- - sntp.retry_max
+  - i
+  - 30
+  - title: Maximum retry interval
+- - sntp.update_interval
+  - i
+  - 7200
+  - title: Update interval. If 0, performs a one-off sync
+- - azure
+  - o
+  - title: Azure IoT Hub settings
+- - azure.enable
+  - b
+  - false
+  - title: Enable Azure IoT Hub connection
+- - azure.cs
+  - s
+  - ""
+  - title: Connection string, for SAS auth
+- - azure.token_ttl
+  - i
+  - 3600
+  - title: Life time of the SAS token
+- - azure.host_name
+  - s
+  - ""
+  - title: IoT hub host name
+- - azure.device_id
+  - s
+  - ""
+  - title: Device ID
+- - azure.cert
+  - s
+  - ""
+  - title: X.509 certificate
+- - azure.key
+  - s
+  - ""
+  - title: X.509 private key
+- - azure.enable_cm
+  - b
+  - true
+  - title: Subscribe to the cloud messages topic
+- - azure.enable_dm
+  - b
+  - true
+  - title: Subscribe to the direct method invocation topic
+- - bt
+  - o
+  - title: Bluetooth settings
+- - bt.enable
+  - b
+  - true
+  - title: Enable BT
+- - bt.dev_name
+  - s
+  - ""
+  - title: Device name; defaults to device.id
+- - bt.adv_enable
+  - b
+  - true
+  - title: Advertise services
+- - bt.scan_rsp_data_hex
+  - s
+  - ""
+  - title: Scan response data, hex-encoded
+- - bt.keep_enabled
+  - b
+  - false
+  - title: By default, BT will be disabled once WiFi is configured and connects. Set
+      this to true to keep BT enabled.
+- - bt.allow_pairing
+  - b
+  - true
+  - title: Allow pairing/bonding with other devices
+- - bt.max_paired_devices
+  - i
+  - -1
+  - title: Max number of paired devices; -1 - no limit
+- - bt.random_address
+  - b
+  - true
+  - title: Use random BT address
+- - bt.gatt_mtu
+  - i
+  - 500
+  - title: Local MTU setting, used when negotiating with clients
+- - bt.gatts
+  - o
+  - title: GATTS settings
+- - bt.gatts.min_sec_level
+  - i
+  - 0
+  - title: 0 - no auth required, 1 - encryption reqd, 2 - encryption + MITM reqd
+- - bt.gatts.require_pairing
+  - b
+  - false
+  - title: Require device to be paired before accessing services
+- - bt.debug_svc_enable
+  - b
+  - true
+  - title: Enable the debug service
+- - bt.debug_svc_sec_level
+  - i
+  - 0
+  - title: Minimum required security level
+- - update
+  - o
+  - title: Firmware updater
+- - update.timeout
+  - i
+  - 600
+  - title: Update will be aborted if it does not finish within this time
+- - update.commit_timeout
+  - i
+  - title: After applying update, wait for commit up to this long
+- - update.url
+  - s
+  - title: Fetch updates from here
+- - update.interval
+  - i
+  - title: Check for updates this often
+- - update.extra_http_headers
+  - s
+  - title: Extra HTTP request headers
+- - update.ssl_ca_file
+  - s
+  - ca.pem
+  - title: TLS CA file
+- - update.ssl_client_cert_file
+  - s
+  - title: TLS client cert file
+- - update.ssl_server_name
+  - s
+  - title: TLS Server Name
+- - shadow.ota_enable
+  - b
+  - true
+  - title: Enable OTA via shadow
+- - shadow.autocommit
+  - b
+  - false
+  - title: Autocommit OTA if the shadow connection is successful
+- - rpc
+  - o
+  - title: RPC settings
+- - rpc.enable
+  - b
+  - true
+  - title: Enable RPC
+- - rpc.max_frame_size
+  - i
+  - 4096
+  - title: Max Frame Size
+- - rpc.max_queue_length
+  - i
+  - 25
+  - title: Max Queue Length
+- - rpc.default_out_channel_idle_close_timeout
+  - i
+  - 10
+  - title: Default idle close timeout for outbound channels
+- - rpc.acl_file
+  - s
+  - title: File with RPC ACL JSON
+- - rpc.auth_domain
+  - s
+  - title: Realm to use for digest authentication
+- - rpc.auth_file
+  - s
+  - title: File with user credentials in the htdigest format
+- - rpc.ws
+  - o
+  - title: RPC over WebSocket settings
+- - rpc.ws.enable
+  - b
+  - true
+  - title: Enable RPC over WebSocket
+- - rpc.ws.server_address
+  - s
+  - ""
+  - title: Cloud server address
+- - rpc.ws.reconnect_interval_min
+  - i
+  - 1
+  - title: Minimal reconnect interval
+- - rpc.ws.reconnect_interval_max
+  - i
+  - 60
+  - title: Maximal reconnect interval
+- - rpc.ws.ssl_server_name
+  - s
+  - title: TLS Server Name
+- - rpc.ws.ssl_cert
+  - s
+  - title: TLS client cert file
+- - rpc.ws.ssl_key
+  - s
+  - title: TLS client key file
+- - rpc.ws.ssl_ca_cert
+  - s
+  - title: TLS CA file
+- - dash.enable
+  - b
+  - false
+  - title: Enable
+- - dash.token
+  - s
+  - ""
+  - title: Access token
+- - dash.server
+  - s
+  - wss://mdash.net/api/v2/rpc
+  - title: Server address
+- - dash.ssl_cert
+  - s
+  - ""
+  - title: Client certificate to present to the server
+- - dash.ssl_key
+  - s
+  - ""
+  - title: Private key corresponding to the certificate
+- - dash.ssl_ca_cert
+  - s
+  - ca.pem
+  - title: Verify server certificate using this CA bundle
+- - dash.send_logs
+  - b
+  - false
+  - title: Send logs
+- - http
+  - o
+  - title: HTTP Server
+- - http.enable
+  - b
+  - true
+  - title: Enable HTTP Server
+- - http.listen_addr
+  - s
+  - "80"
+  - title: Listening port / address
+- - http.document_root
+  - s
+  - /
+  - title: Root for serving files. Setting to empty disables file serving.
+- - http.ssl_cert
+  - s
+  - title: Turn on SSL on the listener, use this cert
+- - http.ssl_key
+  - s
+  - title: SSL key to use
+- - http.ssl_ca_cert
+  - s
+  - title: Verify clients this CA bundle
+- - http.upload_acl
+  - s
+  - '*'
+  - title: Upload file ACL
+- - http.hidden_files
+  - s
+  - title: Hidden file pattern
+- - http.auth_domain
+  - s
+  - title: Enable authentication of all HTTP requests
+- - http.auth_file
+  - s
+  - title: Password file to use for auth
+- - dns_sd
+  - o
+  - title: DNS-SD service discovery
+- - dns_sd.enable
+  - b
+  - false
+  - title: Enable service discovery
+- - dns_sd.host_name
+  - s
+  - mOS-??????
+  - title: DNS-SD host name. '?' chars will be expanded with MAC address hex digits
+- - dns_sd.txt
+  - s
+  - ""
+  - title: Extra comma-separated key=value pairs to put into the TXT service record
+- - dns_sd.ttl
+  - i
+  - 120
+  - title: Time-to-live in seconds
+- - dns_sd.host_name
+  - mOS-esp32-??????
+- - eth
+  - o
+  - title: Ethernet settings
+- - eth.enable
+  - b
+  - false
+  - title: Enable Ethernet interface
+- - eth.phy_addr
+  - i
+  - 0
+  - title: (R)MII PHY address
+- - eth.ip
+  - s
+  - title: Static IP Address
+- - eth.netmask
+  - s
+  - title: Static Netmask
+- - eth.gw
+  - s
+  - title: Static Default Gateway
+- - eth.clk_mode
+  - i
+  - 0
+  - title: '50 MHz clock source: 0 in <- GPIO0, 1 out -> GPIO0, 2 out -> GPIO16, 3
+      out -> GPIO17 (inverted)'
+- - eth.mdc_gpio
+  - i
+  - 23
+  - title: GPIO to use for RMII MDC signal
+- - eth.mdio_gpio
+  - i
+  - 18
+  - title: GPIO to use for RMII MDIO signal
+- - eth.phy_pwr_gpio
+  - i
+  - -1
+  - title: GPIO to use for PHY PWR control signal
+- - devtab
+  - o
+  - title: Devices to initialize
+- - devtab.dev0
+  - o
+  - title: Device table entry 0
+- - devtab.dev0.name
+  - s
+  - ""
+  - title: Device name
+- - devtab.dev0.type
+  - s
+  - ""
+  - title: Device type
+- - devtab.dev0.opts
+  - s
+  - ""
+  - title: Device options
+- - devtab.dev1
+  - o
+  - title: Device table entry 1
+- - devtab.dev1.name
+  - s
+  - ""
+  - title: Device name
+- - devtab.dev1.type
+  - s
+  - ""
+  - title: Device type
+- - devtab.dev1.opts
+  - s
+  - ""
+  - title: Device options
+- - devtab.dev2
+  - o
+  - title: Device table entry 2
+- - devtab.dev2.name
+  - s
+  - ""
+  - title: Device name
+- - devtab.dev2.type
+  - s
+  - ""
+  - title: Device type
+- - devtab.dev2.opts
+  - s
+  - ""
+  - title: Device options
+- - devtab.dev3
+  - o
+  - title: Device table entry 3
+- - devtab.dev3.name
+  - s
+  - ""
+  - title: Device name
+- - devtab.dev3.type
+  - s
+  - ""
+  - title: Device type
+- - devtab.dev3.opts
+  - s
+  - ""
+  - title: Device options
+- - devtab.dev4
+  - o
+  - title: Device table entry 4
+- - devtab.dev4.name
+  - s
+  - ""
+  - title: Device name
+- - devtab.dev4.type
+  - s
+  - ""
+  - title: Device type
+- - devtab.dev4.opts
+  - s
+  - ""
+  - title: Device options
+- - fstab
+  - o
+  - title: Filesystems to create and mount
+- - fstab.fs0
+  - o
+  - title: FS table entry 0
+- - fstab.fs0.dev
+  - s
+  - ""
+  - title: Device name
+- - fstab.fs0.type
+  - s
+  - ""
+  - title: FS type
+- - fstab.fs0.opts
+  - s
+  - ""
+  - title: FS options
+- - fstab.fs0.path
+  - s
+  - ""
+  - title: Mount point
+- - fstab.fs0.create
+  - b
+  - false
+  - title: Create on first boot
+- - fstab.fs0.optional
+  - b
+  - false
+  - title: Failure to create/mount is not fatal
+- - fstab.fs0.created
+  - b
+  - false
+  - title: This flag is set after creation
+- - fstab.fs1
+  - o
+  - title: FS table entry 1
+- - fstab.fs1.dev
+  - s
+  - ""
+  - title: Device name
+- - fstab.fs1.type
+  - s
+  - ""
+  - title: FS type
+- - fstab.fs1.opts
+  - s
+  - ""
+  - title: FS options
+- - fstab.fs1.path
+  - s
+  - ""
+  - title: Mount point
+- - fstab.fs1.create
+  - b
+  - false
+  - title: Create on first boot
+- - fstab.fs1.optional
+  - b
+  - false
+  - title: Failure to create/mount is not fatal
+- - fstab.fs1.created
+  - b
+  - false
+  - title: This flag is set after creation
+- - fstab.fs2
+  - o
+  - title: FS table entry 2
+- - fstab.fs2.dev
+  - s
+  - ""
+  - title: Device name
+- - fstab.fs2.type
+  - s
+  - ""
+  - title: FS type
+- - fstab.fs2.opts
+  - s
+  - ""
+  - title: FS options
+- - fstab.fs2.path
+  - s
+  - ""
+  - title: Mount point
+- - fstab.fs2.create
+  - b
+  - false
+  - title: Create on first boot
+- - fstab.fs2.optional
+  - b
+  - false
+  - title: Failure to create/mount is not fatal
+- - fstab.fs2.created
+  - b
+  - false
+  - title: This flag is set after creation
+- - sys.mount
+  - o
+  - title: Extra filesystem to mount
+- - sys.mount.path
+  - s
+  - ""
+  - title: Mount point
+- - sys.mount.dev_type
+  - s
+  - ""
+  - title: Storage device type
+- - sys.mount.dev_opts
+  - s
+  - ""
+  - title: Storage device options
+- - sys.mount.fs_type
+  - s
+  - ""
+  - title: Filesystem type
+- - sys.mount.fs_opts
+  - s
+  - ""
+  - title: Filesystem options
+- - gcp
+  - o
+  - title: GCP IOT settings
+- - gcp.enable
+  - b
+  - false
+  - title: Enable GCP IOT
+- - gcp.server
+  - s
+  - mqtt.googleapis.com
+  - title: Server address
+- - gcp.project
+  - s
+  - ""
+  - title: Project ID
+- - gcp.region
+  - s
+  - ""
+  - title: Region name
+- - gcp.registry
+  - s
+  - ""
+  - title: Device registry name
+- - gcp.device
+  - s
+  - ""
+  - title: Device name
+- - gcp.key
+  - s
+  - ""
+  - title: Private key to use for token signing
+- - gcp.token_ttl
+  - i
+  - 3600
+  - title: Life time of the token
+- - gcp.enable_config
+  - b
+  - false
+  - title: Subscribe to the configuration topic
+- - gcp.enable_commands
+  - b
+  - true
+  - title: Subscribe to the command topic
+- - update.enable_post
+  - b
+  - true
+  - title: Enable POST updates
+- - pppos.enable
+  - b
+  - false
+  - title: Enable PPPoS
+- - pppos.uart_no
+  - i
+  - 1
+  - title: Which UART to use
+- - pppos.baud_rate
+  - i
+  - 115200
+  - title: Baud rate to use for data transfer
+- - pppos.start_baud_rate
+  - i
+  - 115200
+  - title: Starting baud rate, used for initial configuration
+- - pppos.fc_enable
+  - b
+  - false
+  - title: Enable hardware CTS/RTS flow control
+- - pppos.start_fc_enable
+  - b
+  - false
+  - title: Enable hardware CTS/RTS flow control for initial configuration
+- - pppos.rx_gpio
+  - i
+  - -1
+  - title: RX pin; -1 = use default
+- - pppos.tx_gpio
+  - i
+  - -1
+  - title: TX pin; -1 = use default
+- - pppos.cts_gpio
+  - i
+  - -1
+  - title: CTS pin; -1 = use default
+- - pppos.rts_gpio
+  - i
+  - -1
+  - title: RTS pin; -1 = use default
+- - pppos.dtr_gpio
+  - i
+  - -1
+  - title: DTR pin; -1 - do not use, if set will be driven to active state
+- - pppos.dtr_act
+  - i
+  - 0
+  - title: Active state for the DTR pin
+- - pppos.apn
+  - s
+  - ""
+  - title: APN name
+- - pppos.user
+  - s
+  - ""
+  - title: User name
+- - pppos.pass
+  - s
+  - ""
+  - title: Password
+- - pppos.connect_on_startup
+  - b
+  - true
+  - title: Connect immediately on startup
+- - pppos.rst_gpio
+  - i
+  - -1
+  - title: Reset pin; -1 = no reset
+- - pppos.rst_act
+  - i
+  - 0
+  - title: Active level, 0 or 1
+- - pppos.rst_hold_ms
+  - i
+  - 100
+  - title: Time to hold reset pin in active state
+- - pppos.rst_wait_ms
+  - i
+  - 5000
+  - title: Time to wait after reset before initializing
+- - pppos.rst_mode
+  - i
+  - 0
+  - title: 'Reset mode: 0 - on first connect only, 1 - on every connect'
+- - pppos.echo_interval
+  - i
+  - 10
+  - title: LCP Echo interval, seconds
+- - pppos.echo_fails
+  - i
+  - 3
+  - title: Number of failed echos before connection is declared dead and retried
+- - pppos.hexdump_enable
+  - b
+  - false
+  - title: Dump all the data sent over UART to stderr
+- - provision
+  - o
+  - title: Provision library settings
+- - provision.btn
+  - o
+  - title: Reset button settings
+- - provision.btn.pin
+  - i
+  - -1
+  - title: Reset button GPIO pin
+- - provision.btn.pull_up
+  - b
+  - false
+  - title: True if button is pulled up when inactive
+- - provision.btn.hold_ms
+  - i
+  - 0
+  - title: Hold interval in milliseconds. -1 to disable, 0 to reset if held on boot,
+      > 0 to reset if held at runtime for this long.
+- - provision.led.pin
+  - i
+  - -1
+  - title: LED GPIO pin. If >= 0, LED blinking will indicate current state.
+- - provision.led.active_high
+  - b
+  - true
+  - title: True if LED is on when output is high (1)
+- - provision.stable_state
+  - i
+  - 3
+  - title: A stable state, beyond which reset will not happen. Se to 0 to disable
+      reset.
+- - provision.timeout
+  - i
+  - 300
+  - title: Maximum time since boot allowed to reach stable state
+- - provision.max_state
+  - i
+  - 0
+  - title: Maximum state reached so far
+- - rpc.azure
+  - o
+  - title: RPC over Azure settings
+- - rpc.azure.enable_dm
+  - b
+  - true
+  - title: Enable RPC over Azure Direct Method calls
+- - rpc.gatts
+  - o
+  - title: Bluetooth settings
+- - rpc.gatts.enable
+  - b
+  - true
+  - title: Enable RPC GATTS service
+- - rpc.gatts.sec_level
+  - i
+  - 0
+  - title: Minimum required security level
+- - rpc.gatts.max_frame_size
+  - i
+  - 4096
+  - title: Maximum allowed frame size
+- - rpc.gcp
+  - o
+  - title: RPC over GCP settings
+- - rpc.gcp.enable
+  - b
+  - true
+  - title: Enable RPC over GCP
+- - rpc.gcp.subfolder
+  - s
+  - rpc
+  - title: Only consider commands with this subfolder
+- - rpc.mqtt
+  - o
+  - title: RPC over MQTT settings
+- - rpc.mqtt.enable
+  - b
+  - true
+  - title: Enable RPC over MQTT
+- - rpc.mqtt.pub_topic
+  - s
+  - '%.*s/rpc'
+  - title: Topic to post outgoing frames to. Argument to the format string is the
+      frame's destination.
+- - rpc.mqtt.sub_topic
+  - s
+  - '%.*s/rpc'
+  - title: Topic to accept incoming frames on. Argument to the format string is device.id
+- - rpc.mqtt.sub_wc
+  - b
+  - true
+  - title: Also subscribe to wildcard topic
+- - rpc.mqtt.qos
+  - i
+  - 1
+  - title: QoS for pub and sub
+- - wifi
+  - o
+  - hide: true
+- - wifi.ap
+  - o
+  - title: WiFi Access Point Config
+- - wifi.ap.enable
+  - b
+  - true
+  - title: Enable
+- - wifi.ap.ssid
+  - s
+  - Mongoose_??????
+  - title: SSID
+- - wifi.ap.pass
+  - s
+  - Mongoose
+  - title: Password
+    type: password
+- - wifi.ap.hidden
+  - b
+  - false
+  - title: Hide SSID
+- - wifi.ap.channel
+  - i
+  - 6
+  - title: Channel
+- - wifi.ap.max_connections
+  - i
+  - 10
+  - title: Max connections
+- - wifi.ap.ip
+  - s
+  - 192.168.4.1
+  - title: IP address
+- - wifi.ap.netmask
+  - s
+  - 255.255.255.0
+  - title: Network Mask
+- - wifi.ap.gw
+  - s
+  - 192.168.4.1
+  - title: Default Gateway
+- - wifi.ap.dhcp_start
+  - s
+  - 192.168.4.2
+  - title: DHCP Start Address
+- - wifi.ap.dhcp_end
+  - s
+  - 192.168.4.100
+  - title: DHCP End Address
+- - wifi.ap.trigger_on_gpio
+  - i
+  - -1
+  - title: Trigger AP on low GPIO
+- - wifi.ap.disable_after
+  - i
+  - 0
+  - title: If > 0, will disable itself after the specified number of seconds
+- - wifi.ap.hostname
+  - s
+  - ""
+  - title: If not empty, DNS server will resolve given host name to the IP address
+      of AP
+- - wifi.sta
+  - o
+  - title: WiFi Station Config
+- - wifi.sta.enable
+  - b
+  - title: Connect to existing WiFi
+- - wifi.sta.ssid
+  - s
+  - title: SSID
+- - wifi.sta.pass
+  - s
+  - title: Password
+    type: password
+- - wifi.sta.user
+  - s
+  - title: Username for WPA-PEAP mode
+- - wifi.sta.anon_identity
+  - s
+  - title: Anonymous identity for WPA mode
+- - wifi.sta.cert
+  - s
+  - title: Client certificate for WPA-TTLS mode
+- - wifi.sta.key
+  - s
+  - title: Client key for WPA-TTLS mode
+- - wifi.sta.ca_cert
+  - s
+  - title: CA certificate for WPA-enterprise mode
+- - wifi.sta.ip
+  - s
+  - title: Static IP Address
+- - wifi.sta.netmask
+  - s
+  - title: Static Netmask
+- - wifi.sta.gw
+  - s
+  - title: Static Default Gateway
+- - wifi.sta.nameserver
+  - s
+  - title: DNS Server
+- - wifi.sta.dhcp_hostname
+  - s
+  - title: Host name to include in DHCP requests
+- - wifi.sta1
+  - wifi.sta
+  - title: WiFi Station Config 1
+- - wifi.sta1.enable
+  - false
+- - wifi.sta2
+  - wifi.sta
+  - title: WiFi Station Config 2
+- - wifi.sta2.enable
+  - false
+- - wifi.sta_cfg_idx
+  - i
+  - 0
+  - title: WiFi station config index to use, 0, 1 or 2
+- - wifi.sta_connect_timeout
+  - i
+  - 30
+  - title: Timeout for connection, seconds
+- - wifi.ap.keep_enabled
+  - b
+  - true
+  - title: Keep AP enabled when station is on
+- - wifi.ap.bandwidth_20mhz
+  - b
+  - false
+  - title: enable 20MHz bandwidth AP operation
+- - wifi.sta_ps_mode
+  - i
+  - 0
+  - title: 'Power save mode for station: 0 - none, 1 - min, 2 - max.'
+- - wifi.sta_all_chan_scan
+  - b
+  - false
+  - title: true to scan all channels or false to perform fast scan
+- - rpc.uart
+  - o
+  - title: RPC-over-UART settings
+- - rpc.uart.uart_no
+  - i
+  - 0
+  - title: UART number (-1 to disable)
+- - rpc.uart.baud_rate
+  - i
+  - 115200
+  - title: Baud rate
+- - rpc.uart.fc_type
+  - i
+  - 2
+  - title: 'Flow control: 0 - none, 1 - CTS/RTS, 2 - XON/XOFF'
+- - rpc.uart.dst
+  - s
+  - ""
+  - title: Destination reachable via this channel
+- - spi
+  - o
+  - title: SPI settings
+- - spi.enable
+  - b
+  - false
+  - title: Enable SPI
+- - spi.debug
+  - b
+  - false
+  - title: Debug SPI bus activity
+- - spi.unit_no
+  - i
+  - 3
+  - title: Which SPI unit to use, 2 or 3
+- - spi.miso_gpio
+  - i
+  - 19
+  - title: GPIO to use for MISO
+- - spi.mosi_gpio
+  - i
+  - 23
+  - title: GPIO to use for MOSI
+- - spi.sclk_gpio
+  - i
+  - 18
+  - title: GPIO to use for SCLK
+- - spi.cs0_gpio
+  - i
+  - 5
+  - title: GPIO to use for CS0
+- - spi.cs1_gpio
+  - i
+  - -1
+  - title: GPIO to use for CS1
+- - spi.cs2_gpio
+  - i
+  - -1
+  - title: GPIO to use for CS2
+- - watson
+  - o
+  - title: IBM Watson IoT Platform settings
+- - watson.enable
+  - b
+  - false
+  - title: Enable IBM Watson IoT Platform connection
+- - watson.host_name
+  - s
+  - ""
+  - title: Host name
+- - watson.client_id
+  - s
+  - ""
+  - title: ID string, including device type and org
+- - watson.token
+  - s
+  - ""
+  - title: Auth token
+- - watson.cert
+  - s
+  - ""
+  - title: X.509 certificate
+- - watson.key
+  - s
+  - ""
+  - title: X.509 private key
+- - watson.ca_cert
+  - s
+  - ""
+  - title: X.509 certificate
+- - mjs
+  - o
+  - title: mJS settings
+- - mjs.generate_jsc
+  - b
+  - true
+  - title: Generate .jsc file when executing any .js file
+- - board
+  - o
+  - title: Board layout configuration
+- - board.led1.pin
+  - i
+  - -1
+  - title: LED GPIO pin
+- - board.led1.active_high
+  - b
+  - true
+  - title: True if LED is on when output is high (1)
+- - board.led2.pin
+  - i
+  - -1
+  - title: LED GPIO pin
+- - board.led2.active_high
+  - b
+  - true
+  - title: True if LED is on when output is high (1)
+- - board.led3.pin
+  - i
+  - -1
+  - title: LED GPIO pin
+- - board.led3.active_high
+  - b
+  - true
+  - title: True if LED is on when output is high (1)
+- - board.btn1.pin
+  - i
+  - -1
+  - title: Button GPIO pin
+- - board.btn1.pull_up
+  - b
+  - false
+  - title: True if button is pulled up when inactive
+- - board.btn2.pin
+  - i
+  - -1
+  - title: Button GPIO pin
+- - board.btn2.pull_up
+  - b
+  - false
+  - title: True if button is pulled up when inactive
+- - board.btn3.pin
+  - i
+  - -1
+  - title: Button GPIO pin
+- - board.btn3.pull_up
+  - b
+  - false
+  - title: True if button is pulled up when inactive
+- - board.led1.pin
+  - 13
+- - board.btn1.pin
+  - 0
+- - board.btn1.pull_up
+  - true
+- - provision.btn.pin
+  - 0
+- - provision.btn.pull_up
+  - true
+- - mqtt.server
+  - iot.eclipse.org:1883
+- - i2c.enable
+  - true
