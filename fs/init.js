@@ -18,7 +18,7 @@ load('api_mqtt.js');
 // Telemetry topic must have this name:
 let topic = '/devices/' + Cfg.get('device.id') + '/events';
 
-let pin = 4;
+let pin = 23;
 let dht = DHT.create(pin, DHT.DHT22);
 
 Timer.set(60000, true, function() { // timer period is in ms
